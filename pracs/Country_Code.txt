@@ -1,0 +1,6 @@
+Country	ISO-2	ISO-3	ISO-M49
+India	IN	IND	356
+United States	US	USA	840
+United Kingdom	GB	GBR	826
+Japan	JP	JPN	392
+Australia	AU	AUS	36
