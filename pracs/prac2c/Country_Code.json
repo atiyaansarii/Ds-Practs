@@ -1,0 +1,32 @@
+{
+    "1": {
+        "Country": "India",
+        "ISO-M49": 356,
+        "ISO-2-CODE": "IN",
+        "ISO-3-CODE": "IND"
+    },
+    "2": {
+        "Country": "United States",
+        "ISO-M49": 840,
+        "ISO-2-CODE": "US",
+        "ISO-3-CODE": "USA"
+    },
+    "3": {
+        "Country": "United Kingdom",
+        "ISO-M49": 826,
+        "ISO-2-CODE": "GB",
+        "ISO-3-CODE": "GBR"
+    },
+    "4": {
+        "Country": "Japan",
+        "ISO-M49": 392,
+        "ISO-2-CODE": "JP",
+        "ISO-3-CODE": "JPN"
+    },
+    "5": {
+        "Country": "Australia",
+        "ISO-M49": 36,
+        "ISO-2-CODE": "AU",
+        "ISO-3-CODE": "AUS"
+    }
+}
