@@ -1,0 +1,5 @@
+"INSERT INTO Country_Code (Country, ISO_M49, ISO_2_CODE, ISO_3_Code)"
+VALUES
+"('India', 356, 'IN', 'IND'),"
+"('United States', 840, 'US', 'USA'),"
+"('Japan', 392, 'JP', 'JPN');"
