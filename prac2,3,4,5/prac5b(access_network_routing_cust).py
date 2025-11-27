@@ -1,0 +1,64 @@
+import sys
+import os
+import pandas as pd
+
+pd.options.mode.chained_assignment = None
+Base = r'C:/Atiya/FY-MSC-IT/Data Science/DS Practs'  # your path with raw string or forward slashes
+
+print('################################')
+print('Working Base :', Base, ' using ', sys.platform)
+print('################################')
+
+sInputFileName = '01-Vermeulen/01-Retrieve/01-EDS/02-Python/Retrieve_IP_DATA.csv'
+sOutputFileName = 'Assess-Network-Routing-Node.csv'
+Company = ''  # not needed since full path is used in sInputFileName
+
+sFileName = os.path.join(Base, sInputFileName)
+print('################################')
+print('Loading :', sFileName)
+print('################################')
+
+IPData = pd.read_csv(sFileName, header=0, low_memory=False, encoding="latin-1")
+
+print('Loaded IP :', IPData.columns.values)
+print('################################')
+
+print('Changed :', IPData.columns.values)
+
+# Drop columns only if they exist
+if 'RowID' in IPData.columns:
+    IPData.drop('RowID', axis=1, inplace=True)
+if 'ID' in IPData.columns:
+    IPData.drop('ID', axis=1, inplace=True)
+
+IPData.rename(columns={'Country': 'Country_Code'}, inplace=True)
+IPData.rename(columns={'Place.Name': 'Place_Name'}, inplace=True)
+IPData.rename(columns={'Post.Code': 'Post_Code'}, inplace=True)
+IPData.rename(columns={'First.IP.Number': 'First_IP_Number'}, inplace=True)
+IPData.rename(columns={'Last.IP.Number': 'Last_IP_Number'}, inplace=True)
+
+print('To :', IPData.columns.values)
+print('################################')
+
+print('Change ', IPData.columns.values)
+for i in IPData.columns.values:
+    j = 'Node_' + i
+    IPData.rename(columns={i: j}, inplace=True)
+
+print('To ', IPData.columns.values)
+print('################################')
+
+sFileDir = os.path.join(Base, '01-Vermeulen', '02-Assess', '01-EDS', '02-Python')
+if not os.path.exists(sFileDir):
+    os.makedirs(sFileDir)
+
+sFileName = os.path.join(sFileDir, sOutputFileName)
+print('################################')
+print('Storing :', sFileName)
+print('################################')
+
+IPData.to_csv(sFileName, index=False, encoding="latin-1")
+
+print('################################')
+print('### Done!! #####################')
+print('################################')
